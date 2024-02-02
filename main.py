@@ -11,129 +11,41 @@ def parseInput(teamInput):
     # Converts user input to lowercase and removes leading and trailing spaces
     teamInput = teamInput.lower().strip()
 
-    # Arizona Diamondbacks
-    if teamInput == "arizona diamondbacks" or teamInput == "diamondbacks" or teamInput == "ari":
-        return "Diamondbacks,ARI"
-    
-    # Atlanta Braves
-    elif teamInput == "atlanta braves" or teamInput == "braves" or teamInput == "atl":
-        return "Braves,ATL"
-    
-    # Baltimore Orioles
-    elif teamInput == "baltimore orioles" or teamInput == "orioles" or teamInput == "bal":
-        return "Orioles,BAL"
-    
-    # Boston Red Sox
-    elif teamInput == "boston red sox" or teamInput == "red sox" or teamInput == "bos":
-        return "Red Sox,BOS"
+    # Dictionary of teams
+    teams = {
+        "arizona diamondbacks": "Diamondbacks,ARI",
+        "atlanta braves": "Braves,ATL",
+        "baltimore orioles": "Orioles,BAL",
+        "boston red sox": "Red Sox,BOS",
+        "chicago cubs": "Cubs,CHC",
+        "chicago white sox": "White Sox,CHW",
+        "cincinnati reds": "Reds,CIN",
+        "cleveland indians": "Indians,CLE",
+        "colorado rockies": "Rockies,COL",
+        "detroit tigers": "Tigers,DET",
+        "houston astros": "Astros,HOU",
+        "kansas city royals": "Royals,KCR",
+        "los angeles angels": "Angels,LAA",
+        "los angeles dodgers": "Dodgers,LAD",
+        "miami marlins": "Marlins,MIA",
+        "milwaukee brewers": "Brewers,MIL",
+        "minnesota twins": "Twins,MIN",
+        "new york mets": "Mets,NYM",
+        "new york yankees": "Yankees,NYY",
+        "oakland athletics": "Athletics,OAK",
+        "philadelphia phillies": "Phillies,PHI",
+        "pittsburgh pirates": "Pirates,PIT",
+        "san diego padres": "Padres,SDP",
+        "san francisco giants": "Giants,SFG",
+        "seattle mariners": "Mariners,SEA",
+        "st. louis cardinals": "Cardinals,STL",
+        "tampa bay rays": "Rays,TBR",
+        "texas rangers": "Rangers,TEX",
+        "toronto blue jays": "Blue Jays,TOR",
+        "washington nationals": "Nationals,WSN"
+    }
 
-    # Chicago Cubs
-    elif teamInput == "chicago cubs" or teamInput == "cubs" or teamInput == "chc":
-        return "Cubs,CHC"
-    
-    # Chicago White Sox
-    elif teamInput == "chicago white sox" or teamInput == "white sox" or teamInput == "chw":
-        return "White Sox,CHW"
-    
-    # Cincinnati Reds
-    elif teamInput == "cincinnati reds" or teamInput == "reds" or teamInput == "cin":
-        return "Reds,CIN"
-    
-    # Cleveland Indians
-    elif teamInput == "cleveland indians" or teamInput == "indians" or teamInput == "cle":
-        return "Indians,CLE"
-    
-    # Colorado Rockies
-    elif teamInput == "colorado rockies" or teamInput == "rockies" or teamInput == "col":
-        return "Rockies,COL"
-    
-    # Detroit Tigers
-    elif teamInput == "detroit tigers" or teamInput == "tigers" or teamInput == "bal":
-        return "Tigers,DET"
-    
-    # Houston Astros
-    elif teamInput == "houston astros" or teamInput == "astros" or teamInput == "hou":
-        return "Astros,HOU"
-    
-    # Kansas City Royals
-    elif teamInput == "kansas city royals" or teamInput == "royals" or teamInput == "kcr":
-        return "Royals,KCR"
-    
-    # Los Angeles Angels
-    elif teamInput == "los angeles angels" or teamInput == "angels" or teamInput == "laa":
-        return "Angels,LAA"
-    
-    # Los Angeles Dodgers
-    elif teamInput == "los angeles dodgers" or teamInput == "dodgers" or teamInput == "lad":
-        return "Dodgers,LAD"
-    
-    # Miami Marlins
-    elif teamInput == "miami marlins" or teamInput == "marlins" or teamInput == "mia":
-        return "Marlins,MIA"
-    
-    # Milwaukee Brewers
-    elif teamInput == "milwaukee brewers" or teamInput == "brewers" or teamInput == "mil":
-        return "Brewers,MIL"
-    
-    # Minnesota Twins
-    elif teamInput == "minnesota twins" or teamInput == "twins" or teamInput == "min":
-        return "Twins,MIN"
-    
-    # New York Mets
-    elif teamInput == "new york mets" or teamInput == "mets" or teamInput == "nym":
-        return "Mets,NYM"
-    
-    # New York Yankees
-    elif teamInput == "new york yankees" or teamInput == "yankees" or teamInput == "nyy":
-        return "Yankees,NYY"
-    
-    # Oakland Athletics
-    elif teamInput == "oakland athletics" or teamInput == "athletics" or teamInput == "oak":
-        return "Athletics,OAK"
-    
-    # Philadelphia Phillies
-    elif teamInput == "philadelphia phillies" or teamInput == "phillies" or teamInput == "phi":
-        return "Phillies,PHI"
-    
-    # Pittsburgh Pirates
-    elif teamInput == "pittsburgh pirates" or teamInput == "pirates" or teamInput == "pit":
-        return "Pirates,PIT"
-    
-    # San Diego Padres
-    elif teamInput == "san diego padres" or teamInput == "padres" or teamInput == "sdp":
-        return "Padres,SDP"
-    
-    # San Francisco Giants
-    elif teamInput == "san francisco giants" or teamInput == "giants" or teamInput == "sfg":
-        return "Giants,SFG"
-    
-    # Seattle Mariners
-    elif teamInput == "seattle mariners" or teamInput == "mariners" or teamInput == "sea":
-        return "Mariners,SEA"
-    
-    # St. Louis Cardinals
-    elif teamInput == "st. louis cardinals" or teamInput == "cardinals" or teamInput == "stl":
-        return "Cardinals,STL"
-    
-    # Tampa Bay Rays
-    elif teamInput == "tampa bay rays" or teamInput == "rays" or teamInput == "tbr":
-        return "Rays,TBR"
-    
-    # Texas Rangers
-    elif teamInput == "texas rangers" or teamInput == "rangers" or teamInput =="tex":
-        return "Rangers,TEX"
-    
-    # Toronto Blue Jays
-    elif teamInput == "toronto blue jays" or teamInput == "blue jays" or teamInput == "tor":
-        return "Blue Jays,TOR"
-    
-    # Washington Nationals
-    elif teamInput == "washington nationals" or teamInput == "nationals" or teamInput == "wsn":
-        return "Nationals,WSN"
-    
-    # Invalid team
-    else:
-        return "invalid"
+    return teams.get(teamInput, "invalid")
 
 def getUserInputs():
 
